@@ -1,17 +1,44 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+
+//css
+import './Styles/index.css';
+
+//redux && store
+import {createRoot} from 'react-dom/client';
+import { Provider } from "react-redux";
+import {PersistGate} from 'redux-persist/integration/react';
+import storage from 'redux-persist/lib/storage';
+import {configureStore} from "@reduxjs/toolkit";
+import {persistReducer,persistStore} from 'redux-persist'
+import rootReducer from "./Store/Reducers/reducers";
+
+//root-node
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const persistConfig={
+    key:"root",
+    storage
+}
+
+const persistedReducer=persistReducer(persistConfig,rootReducer);
+
+const store=configureStore({
+    reducer:persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+            serializableCheck: false
+        }),
+})
+
+const persistedStore=persistStore(store);
+
+const root=createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    <Provider store={store}>
+        <PersistGate persistor={persistedStore}>
+                    <App />
+        </PersistGate>
+    </Provider>);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+

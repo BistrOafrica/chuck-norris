@@ -1,0 +1,12 @@
+@import "Login.css";
+@import "variables.css";
+@import "home.css";
+@import "home-mobile.css";
+@import "Login-mobile.css";
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--priColor);
+}
+

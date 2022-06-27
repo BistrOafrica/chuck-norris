@@ -1,0 +1,122 @@
+
+@media (max-width: 768px){
+
+    .top-bar{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+        border-radius: 10px;
+        margin: 10px;
+    }
+    .top-bar>img{
+        width: 80px;
+    }
+    .home-page{
+        padding: 5px;
+    }
+    .home-container{
+        display: flex;
+        flex-flow: column-reverse;
+        height: 100%;
+    }
+    .grid-item{
+        display: none;
+        padding: 5px;
+    }
+    .grid-item-user{
+        display: none;
+    }
+    .grid-item-feed{
+        display: block;
+        height: fit-content;
+    }
+    .grid-item-category{
+        display: block;
+    }
+    .mobile{
+        display: block;
+    }
+    .drawer-menu{
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        background-color: #03997b44;
+        border-radius: 10px;
+    }
+
+    .jokes-desktop{
+        display: none;
+    }
+
+    .drawer-mobile{
+        display:block;
+        position: absolute;
+        width: calc(100vw - 50px);
+        margin: 0 auto;
+        padding: 30px 20px;
+        top: 90px;
+        border-radius: 14px;
+        background:  #ffffff;
+        box-shadow:  5px 5px 11px #d0d0d0,
+        -5px -5px 11px #ffffff;
+    }
+    .cat-names{
+        border-radius: 3px;
+        padding: 3px 7px;
+        margin: 3px 5px;
+    }
+    .user{
+        display: grid;
+        place-items: center;
+    }
+
+    .btn-light{
+        padding: 0 5px;
+        margin: 0;
+        height: fit-content;
+        font-size: 14px;
+    }
+    .close-btn{
+        padding: 0px 10px;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .feed{
+        overflow-y:scroll;
+        height: calc(100vh - 390px);
+        padding: 0 0 20px;
+    }
+
+    .feedItem{
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 5px auto;
+    }
+    .feedItemFooter{
+        width: calc(100% - 40px);
+        padding: 0 20px;
+        gap: 10px;
+    }
+    .icon>img{
+        width: 70px;
+    }
+    .quote{
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+    .saved-jokes{
+        background-color: #03997b22;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+    h1,h2,h3,h4,h5{
+        margin-top: 0;
+    }
+}
